@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style2.css">
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/logo192.png" />
+  <title>Personal Profile</title>
+</head>
+<body>
+  <img src="img/300.jpg" alt="Profile Picture">
+  <button onclick="myFunction()">View my profile</button>
+  <script>
+function myFunction() {
+    
+    app = "vnd.youtube://youtube.com/redirect?event=comments&redir_token=QUFFLUhqbDdvTWwxZlBEOW1XVEhNNFJDSkFFcmtHTmFsQXxBQ3Jtc0tsUlh1ZHZweDJJM3FxajA1YkMtRkQ2VzZCMnlSWm01YkVXUnZKSVp5em1yaWd0RWJuLUZkZWluV3E5ZjFTQ1lxaFRwYnd2S2JYZnJ3ejdGWi1oMnFDQjZNeUJVRzYzNDEwVVFxQlF0LUdsd3FDSDR6VQ&q=https%3A%2F%2Fv.ht%2F8ONe&html_redirect=1";
+
+    if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+        window.location = app;
+        window.setTimeout(function() {
+            window.location = mobileFallback;
+        }, 25);
+    } else {
+        window.location = desktopFallback;
+    }
+
+    function killPopup() {
+        window.removeEventListener('pagehide', killPopup);
+    }
+
+    window.addEventListener('pagehide', killPopup);
+}
+</script>
+</body>
+</html>
